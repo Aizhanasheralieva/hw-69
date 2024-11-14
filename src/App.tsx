@@ -1,11 +1,23 @@
-// import { AutoComplete, AutoCompleteCompleteEvent } from 'primereact/autocomplete';
-// import 'primereact/resources/themes/lara-light-indigo/theme.css';
-// import 'primereact/resources/primereact.min.css';
+import TVShowsSearch from "./components/TVShowsSearch/TVShowsSearch.tsx";
+import Layout from "./components/Layout/Layout.tsx";
+import {Route, Routes} from "react-router-dom";
 
 const App = () => {
-  return <>
+  return (
+    <>
+        <Layout>
+            <div>
+                <TVShowsSearch/>
+            </div>
+            <Routes>
+                <Route/>
 
-  </>;
+
+            </Routes>
+        </Layout>
+
+    </>
+  );
 };
 
 export default App;

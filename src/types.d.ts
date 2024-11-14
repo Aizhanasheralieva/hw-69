@@ -1,13 +1,30 @@
 interface IShows {
-    name: string;
-    description: string;
-    id: number;
-    image: string;
-    genres: string[];
-    languages: string;
-    premiered: string;
+  name: string;
+  id: number;
+  // description: string;
+  // image: string;
+  // genres: string[];
+  // languages: string;
+  // premiered: string;
+}
+
+interface IShowsForm {
+  name: string;
+  id: number;
+  // description: string;
+  // image: string;
+  // genres: string[];
+  // languages: string;
+  // premiered: string;
 }
 
 interface IShowsAPI {
-    [id: string]: IShows;
+  [id: string]: IShows;
+}
+
+interface ApiShow {
+  show: {
+    id: number;
+    name: string;
+  };
 }

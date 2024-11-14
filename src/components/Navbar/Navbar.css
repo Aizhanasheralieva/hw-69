@@ -1,7 +1,7 @@
 .navbar ul .nav-link {
-    color: #ccc;
+  color: #ccc;
 }
 
 .navbar ul .nav-link.active {
-    color: white;
+  color: white;
 }

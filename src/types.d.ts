@@ -7,7 +7,7 @@ interface IShowsDetails {
   id: number;
   summary: string;
   image?: {
-   medium: string
+    medium: string;
   };
   genres: string[];
   languages: string;
@@ -17,7 +17,6 @@ interface IShowsDetails {
 interface IShowsForm {
   name: string;
   id: number;
-
 }
 
 interface IShowsAPI {

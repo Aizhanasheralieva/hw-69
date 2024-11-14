@@ -6,11 +6,11 @@ import {useSelector} from "react-redux";
 import {RootState} from "../../app/store.ts";
 import {fetchSuggestions} from "../../store/thunks/TVShows/TvShowsThunks.ts";
 import {useAppDispatch, useAppSelector} from "../../app/hooks.ts";
-import {selectAddShowLoading} from "../../store/slices/TVShowsSlice.ts";
+import {selectFetchShowLoading} from "../../store/slices/TVShowsSlice.ts";
 import {Link} from "react-router-dom";
 
 const TvShowsSearch = () => {
-    const addLoading = useAppSelector(selectAddShowLoading);
+    const addLoading = useAppSelector(selectFetchShowLoading);
     const [show, setShow] = useState<IShowsForm>({
         id: 0,
         name: "",
@@ -25,7 +25,7 @@ const TvShowsSearch = () => {
     const onChangeShowInput = (event: AutoCompleteChangeEvent) => {
         const { value } = event;
 
-        if ( value.length > 2) {
+        if (value.length > 2) {
             setShow((prevState) => ({
                 ...prevState,
                 name: value,

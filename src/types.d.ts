@@ -1,21 +1,23 @@
 interface IShows {
   name: string;
   id: number;
-  // description: string;
-  // image: string;
-  // genres: string[];
-  // languages: string;
-  // premiered: string;
+}
+interface IShowsDetails {
+  name: string;
+  id: number;
+  summary: string;
+  image?: {
+   medium: string
+  };
+  genres: string[];
+  languages: string;
+  premiered: string;
 }
 
 interface IShowsForm {
   name: string;
   id: number;
-  // description: string;
-  // image: string;
-  // genres: string[];
-  // languages: string;
-  // premiered: string;
+
 }
 
 interface IShowsAPI {

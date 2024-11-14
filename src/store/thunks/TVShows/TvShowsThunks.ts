@@ -15,3 +15,13 @@ export const fetchSuggestions = createAsyncThunk<  IShows[], string>(
 
         return specificFormatShows;
     });
+
+export const fetchTVShowDetailedInfo = createAsyncThunk<  IShowsDetails, string>(
+    'TVShows/fetchTVShowDetailedInfo',
+    async (id) => {
+        const response = await fetch (`http://api.tvmaze.com/shows/${id}`);
+        const data = await response.json();
+        console.log(data);
+        return data;
+    }
+);

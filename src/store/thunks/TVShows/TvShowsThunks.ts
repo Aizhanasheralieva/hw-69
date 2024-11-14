@@ -7,10 +7,11 @@ export const fetchSuggestions = createAsyncThunk<  IShows[], string>(
         const data = await response.json();
         console.log(data);
 
-        const specificFormatShows = data.map((oneShow: ApiShow) => {
-            id: oneShow.show.id;
-            name: oneShow.show.name;
-        });
+        const specificFormatShows = data.map((oneShow: ApiShow) => ({
+            id: oneShow.show.id,
+            name: oneShow.show.name
+        }));
+
 
         return specificFormatShows;
     });

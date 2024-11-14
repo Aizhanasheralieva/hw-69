@@ -7,7 +7,7 @@ import { RootState } from "../../app/store.ts";
 import { fetchSuggestions } from "../../store/thunks/TVShows/TvShowsThunks.ts";
 import { useAppDispatch, useAppSelector } from "../../app/hooks.ts";
 import { selectFetchShowLoading } from "../../store/slices/TVShowsSlice.ts";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const TvShowsSearch = () => {
   const addLoading = useAppSelector(selectFetchShowLoading);
@@ -17,6 +17,7 @@ const TvShowsSearch = () => {
   });
 
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const fetchedSuggestions = useSelector(
     (state: RootState) => state.TVShows.shows,
@@ -39,6 +40,10 @@ const TvShowsSearch = () => {
     }
   };
 
+  const controlShowClick = (id: number) => {
+    navigate(`/shows/${id}`);
+  };
+
   return (
     <div className="container">
       <form className="my-3 mx-auto w-50 d-flex justify-content-center align-items-center">
@@ -55,11 +60,11 @@ const TvShowsSearch = () => {
             dropdown
             onChange={onChangeShowInput}
             itemTemplate={(oneShow: IShows) => (
-              <Link to={`/shows/${oneShow.id}`}>
-                <div>{oneShow.name}</div>
-              </Link>
-            )}
-          />
+                <Link className="text-decoration-none" to={`/shows/${oneShow.id}`} onClick={() => controlShowClick(show.id)}>
+                    <div>{oneShow.name}</div>
+                </Link>
+              )}
+            />
         </div>
       </form>
     </div>
